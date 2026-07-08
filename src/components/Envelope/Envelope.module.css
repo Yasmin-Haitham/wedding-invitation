@@ -33,6 +33,13 @@
   border-radius: 12px;
 }
 
+.envelopeVideo {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
 .decoFlower {
   position: absolute;
   width: clamp(58px, 13vw, 96px);

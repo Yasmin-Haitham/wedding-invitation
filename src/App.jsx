@@ -5,15 +5,23 @@ import Letter from './components/Letter/Letter.jsx'
 import Petals from './components/Petals.jsx'
 
 function App() {
+  const [envelopeDone, setEnvelopeDone] = useState(false)
   const [opened, setOpened] = useState(false)
   const [contentVisible, setContentVisible] = useState(false)
   const [petalsActive, setPetalsActive] = useState(false)
   const reducedMotion = useReducedMotion()
 
   function handleOpen() {
-    if (opened) return
+    if (envelopeDone) return
+    setEnvelopeDone(true)
+    if (reducedMotion) {
+      setOpened(true)
+      setContentVisible(true)
+    }
+  }
+
+  function handleEnvelopeExited() {
     setOpened(true)
-    if (reducedMotion) setContentVisible(true)
   }
 
   function handleUnfolded() {
@@ -23,7 +31,9 @@ function App() {
 
   return (
     <>
-      <AnimatePresence>{!opened && <Envelope key="envelope" onOpen={handleOpen} />}</AnimatePresence>
+      <AnimatePresence onExitComplete={handleEnvelopeExited}>
+        {!envelopeDone && <Envelope key="envelope" onOpen={handleOpen} />}
+      </AnimatePresence>
       <Letter isOpen={opened} contentVisible={contentVisible} onUnfolded={handleUnfolded} />
       <Petals active={petalsActive && !reducedMotion} />
     </>

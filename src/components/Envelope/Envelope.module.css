@@ -1,0 +1,108 @@
+.stage {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  z-index: 50;
+}
+
+.scene {
+  position: relative;
+  width: min(400px, 74vw);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.envelopeBtn {
+  all: unset;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  border-radius: 16px;
+  position: relative;
+  z-index: 3;
+  filter: drop-shadow(0 18px 32px rgba(180, 120, 105, 0.22));
+}
+
+.envelopeBtn:focus-visible {
+  outline: 2px solid var(--rose);
+  outline-offset: 8px;
+  border-radius: 12px;
+}
+
+.envelopeBtn img {
+  border-radius: 12px;
+}
+
+.decoFlower {
+  position: absolute;
+  width: clamp(58px, 13vw, 96px);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.55;
+  mix-blend-mode: multiply;
+  filter: saturate(0.75);
+}
+
+.tl {
+  top: -10%;
+  left: -24%;
+  transform: rotate(-6deg);
+}
+
+.tr {
+  top: -10%;
+  right: -24%;
+  transform: scaleX(-1) rotate(-6deg);
+}
+
+.bl {
+  bottom: -12%;
+  left: -22%;
+  width: clamp(48px, 11vw, 80px);
+  transform: scale(1, -1) rotate(-4deg);
+}
+
+.br {
+  bottom: -12%;
+  right: -22%;
+  width: clamp(48px, 11vw, 80px);
+  transform: scale(-1, -1) rotate(-4deg);
+}
+
+.hint {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.92rem;
+  letter-spacing: 0.08em;
+  color: var(--rose-deep);
+  animation: hintPulse 3s ease-in-out infinite;
+}
+
+@keyframes hintPulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hint {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 360px) {
+  .stage {
+    gap: 1.25rem;
+  }
+}

@@ -1,0 +1,32 @@
+@import './styles/tokens.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Cormorant Garamond', serif;
+  background:
+    radial-gradient(ellipse at 20% 6%, #fefaf6 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 95%, #f1dad1 0%, transparent 55%),
+    var(--bg);
+  color: var(--ink);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+#root {
+  min-height: 100vh;
+}

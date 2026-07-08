@@ -1,0 +1,215 @@
+.content {
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(0.9rem, 2.4vw, 1.02rem);
+  letter-spacing: 0.14em;
+  color: var(--ink-soft);
+}
+
+.names {
+  font-family: 'Parisienne', cursive;
+  font-weight: 400;
+  font-size: clamp(3rem, 11vw, 5.4rem);
+  line-height: 1.15;
+  color: var(--rose-deep);
+  margin: 0.9rem 0 0.5rem;
+}
+
+.amp {
+  display: block;
+  font-size: 0.4em;
+  color: var(--gold);
+  margin: 0.05em 0;
+}
+
+.inviteLine {
+  font-size: clamp(1.02rem, 3vw, 1.24rem);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--ink);
+  max-width: 32ch;
+  margin: 0 auto;
+  line-height: 1.65;
+}
+
+.welcomeMessage {
+  font-size: clamp(0.96rem, 2.6vw, 1.1rem);
+  font-weight: 400;
+  color: var(--ink);
+  max-width: 34ch;
+  margin: 1.4rem auto 0;
+  line-height: 1.75;
+}
+
+.flowerDivider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem auto 1.9rem;
+  width: min(240px, 72%);
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-soft));
+}
+
+.right {
+  background: linear-gradient(90deg, var(--gold-soft), transparent);
+}
+
+.flowerImgWrap {
+  display: inline-flex;
+  /* Framer Motion leaves a persistent transform on this item's motion.div
+     wrapper, which creates a stacking context and isolates mix-blend-mode
+     on the flower image from the card's true background. Matching the
+     background here locally, scoped tightly to just the image, keeps the
+     blend looking correct without tinting the surrounding text/lines. */
+  background: var(--cream);
+}
+
+.flowerImgWrap img {
+  width: 30px;
+  opacity: 0.85;
+  filter: saturate(0.8);
+  mix-blend-mode: multiply;
+}
+
+.when {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+}
+
+.day {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(0.92rem, 2.4vw, 1.05rem);
+  letter-spacing: 0.14em;
+  color: var(--ink-soft);
+}
+
+.dateMain {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.4rem, 7.6vw, 3.4rem);
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.05;
+}
+
+.num {
+  color: var(--rose-deep);
+}
+
+.year {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(0.92rem, 2.4vw, 1.05rem);
+  letter-spacing: 0.1em;
+  color: var(--ink-soft);
+}
+
+.timeLine {
+  margin-top: 0.9rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.02rem, 2.8vw, 1.16rem);
+  letter-spacing: 0.06em;
+  color: var(--rose-deep);
+}
+
+.venue {
+  margin-top: 2.1rem;
+}
+
+.venueLabel {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.86rem;
+  letter-spacing: 0.1em;
+  color: var(--rose-deep);
+}
+
+.venueName {
+  font-size: clamp(1.4rem, 4.6vw, 1.85rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  margin-top: 0.4rem;
+}
+
+.mapBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 1.2rem;
+  padding: 0.7rem 1.7rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.92rem;
+  letter-spacing: 0.03em;
+  color: #fff;
+  text-decoration: none;
+  background: linear-gradient(135deg, var(--rose) 0%, var(--rose-deep) 100%);
+  border-radius: 999px;
+  box-shadow: 0 8px 20px rgba(176, 122, 112, 0.28);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.mapBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(176, 122, 112, 0.36);
+}
+
+.mapBtn:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.mapBtn svg {
+  width: 13px;
+  height: 13px;
+}
+
+.closingSeal {
+  margin-top: 2.3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.closingSealImgWrap {
+  display: inline-flex;
+  /* see .flowerImgWrap comment: matches local background, scoped tightly to
+     just the image, so its mix-blend-mode still composites correctly */
+  background: var(--cream);
+}
+
+.closingSealImgWrap img {
+  width: 42px;
+  opacity: 0.8;
+  mix-blend-mode: multiply;
+}
+
+.closingText {
+  font-family: 'Parisienne', cursive;
+  font-weight: 400;
+  font-size: clamp(1.3rem, 4.2vw, 1.7rem);
+  color: var(--rose-deep);
+}

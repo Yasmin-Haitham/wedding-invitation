@@ -1,0 +1,20 @@
+.petal {
+  position: fixed;
+  top: -60px;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0.55;
+  mix-blend-mode: multiply;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-8vh) translateX(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(112vh) translateX(40px) rotate(280deg);
+  }
+}
